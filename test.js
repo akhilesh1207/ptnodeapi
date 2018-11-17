@@ -1,4 +1,4 @@
-var debugError =false;
+var debugError = false;
 if (debugError)
 {
     console.log('If error');
