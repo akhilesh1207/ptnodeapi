@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>A Responsive Email Template</title>
+    <!--
+    An email present from your friends at Litmus (@litmusapp)
+    Email is surprisingly hard. While this has been thoroughly tested, your mileage may vary.
+    It's highly recommended that you test using a service like Litmus (http://litmus.com) and your own devices.
+    Enjoy!
+ -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script> -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style type="text/css">
+        /* CLIENT-SPECIFIC STYLES */
+
+        body,
+        table,
+        td,
+        a,
+        div {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        /* Prevent WebKit and Windows mobile changing default text sizes */
+
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        /* Remove spacing between tables in Outlook 2007 and up */
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* Allow smoother rendering of resized image in Internet Explorer */
+
+        /* RESET STYLES */
+
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse !important;
+        }
+
+        body {
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            /* background-image: url('G:/Projects/PrimeTech/GIT/NodeAPI/templates/project-report/Building.jpg'); */
+            /* background-repeat: no-repeat; */
+            /* background-attachment: fixed; */
+            /* background-size: cover; */
+        }
+
+        /* iOS BLUE LINKS */
+
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* MOBILE STYLES */
+
+        @media screen and (max-width: 525px) {
+
+            /* ALLOWS FOR FLUID TABLES */
+            .wrapper {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            /* ADJUSTS LAYOUT OF LOGO IMAGE */
+            .logo img {
+                margin: 0 auto !important;
+            }
+
+            /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+            .mobile-hide {
+                display: none !important;
+            }
+
+            .img-max {
+                max-width: 100% !important;
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            /* FULL-WIDTH TABLES */
+            .responsive-table {
+                width: 100% !important;
+            }
+
+            /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+            .padding {
+                padding: 10px 5% 15px 5% !important;
+            }
+
+            .padding-meta {
+                padding: 30px 5% 0px 5% !important;
+                text-align: center;
+            }
+
+            .padding-copy {
+                padding: 10px 5% 10px 5% !important;
+                text-align: center;
+            }
+
+            .no-padding {
+                padding: 0 !important;
+            }
+
+            .section-padding {
+                padding: 50px 15px 50px 15px !important;
+            }
+
+            /* ADJUST BUTTONS ON MOBILE */
+            .mobile-button-container {
+                margin: 0 auto;
+                width: 100% !important;
+            }
+
+            .mobile-button {
+                padding: 15px !important;
+                border: 0 !important;
+                font-size: 16px !important;
+                display: block !important;
+            }
+
+        }
+
+        /* ANDROID CENTER FIX */
+
+        div[style*="margin: 16px 0;"] {
+            margin: 0 !important;
+        }
+
+        .company-title {
+            font-size: 0.9em !important;
+        }
+
+        .company-tag-line {
+            font-size: 0.75em !important;
+        }
+
+        .company-address {
+            font-size: 0.7em !important;
+        }
+
+        .text-coloring {
+            /* color: #E94C24; */
+            color: #EF5A30;
+        }
+
+        .td-back-ground {
+            /* background-color: #DCDCDC */
+            background-color: #E6E7E9
+        }
+
+        tr {
+            height: 20px;
+        }
+
+        .uppercase {
+            text-transform: uppercase
+        }
+
+        tr td {
+            padding: 0 3px;
+        }
+    </style>
+    <script src="http://maps.googleapis.com/maps/api/js">
+    </script>
+    <script>
+        function initialize() {
+            var mapProp = {
+                center: new google.maps.LatLng(51.508742, -0.120850),
+                zoom: 5,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+
+<body style="margin: 0 !important; padding: 0 !important;">
+    <table border="1" cellpadding="1" cellspacing="1" width="100%" class="wrapper">
+        <tr>
+            <td bgcolor="#EF5A30" style="color:white;" colspan="4" align="center">
+                <div class="company-title uppercase">
+                    <b>
+                        <!-- <%= company.name %> -->
+                        PRIME TECH DESIGN CONSULTANTS
+                    </b>
+                </div>
+                <div class="company-tag-line uppercase">
+                    <b>
+                        <!-- <%= company.tagLine %> -->
+                        STRUCTURAL PLANNER & DESIGNER
+                    </b>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="td-back-ground text-coloring" style="width: 50%;" colspan="2" rowspan="2" valign="top">
+                <!-- <div class="company-title uppercase">
+                    <b>
+                        <%= company.name %>
+                    </b>
+                </div>
+                <div class="company-tag-line uppercase">
+                    <b>
+                        <%= company.tagLine %>
+                    </b>
+                </div> -->
+                <div class="company-address">
+                    <%= company.address %>
+                </div>
+                <div class="company-address" style="margin-top: 25px;">
+                    <span style="float: left;">
+                        <!-- <i class="fa fa-phone-square" aria-hidden="true"></i> &nbsp; -->
+                        <%= company.phone %>
+                    </span>
+                    <span style="float:right;">
+                        <!-- <i class="fa fa-envelope" aria-hidden="true"></i> &nbsp; -->
+                        <%= company.email %>
+                    </span>
+                </div>
+            </td>
+            <td style="width: 50%;" valign="top" colspan="2">
+                <div class="company-address text-coloring">
+                    <b>Project Name:-</b>
+                </div>
+                <div class="company-address">
+                    <%= project.name %>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 50%;" valign="top" colspan="2">
+                <div class="company-address text-coloring">
+                    <b>Project Address:-</b>
+                </div>
+                <div class="company-address">
+                    <%= project.address %>
+                </div>
+            </td>
+        </tr>
+        <tr class="td-back-ground">
+            <td colspan="4">
+                <div class="company-address text-coloring" align="center">
+                    <b>SITE VISIT OBSERVATIONS &amp; INSTRUCTION REPORT</b>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <th class="company-address text-coloring td-back-ground">Name</th>
+            <th class="company-address text-coloring td-back-ground">Mobile No.</th>
+            <th class="company-address text-coloring td-back-ground"> Email Id</th>
+        </tr>
+        <% for(var i=0; i < teamData.length; i++) { %>
+            <tr>
+                <td class="company-address text-coloring" align="center">
+                    <%= teamData[i].designation %>
+                </td>
+                <td class="company-address" align="center">
+                    <%= teamData[i].name %>
+                </td>
+                <td class="company-address" align="center">
+                    <%= teamData[i].phone %>
+                </td>
+                <td class="company-address" align="center">
+                    <%= teamData[i].email %>
+                </td>
+            </tr>
+            <% } %>
+                <tr>
+                    <td class="td-back-ground" colspan="4"></td>
+                </tr>
+                <tr>
+                    <th class="company-address text-coloring td-back-ground">Loc.Refrence/Area/Level</th>
+                    <th class="company-address text-coloring td-back-ground">Grid Line</th>
+                    <th class="company-address text-coloring td-back-ground">Date</th>
+                    <th class="company-address text-coloring td-back-ground"> Report no.</th>
+                </tr>
+                <tr>
+                    <td class="company-address" align="center">
+                        <%= prDetails.locationRef %> /
+                            <%= prDetails.area %> /
+                                <%= prDetails.level %>
+                    </td>
+                    <td class="company-address" align="center">
+                        <%= prDetails.gridLine %>
+                    </td>
+                    <td class="company-address" align="center">
+                        <%= prDetails.modifyDate %>
+                    </td>
+                    <td class="company-address" align="center">
+                        <%= prDetails.reportNo %>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-back-ground" colspan="4" style="height:11.2px;"></td>
+                </tr>
+                <tr>
+                    <th class="company-address text-coloring td-back-ground">ELEMENT</th>
+                    <th class="company-address text-coloring td-back-ground" colspan="2">OBSERVATION/INSTRUCTIONS</th>
+                    <th class="company-address text-coloring td-back-ground">LOC./ELEMENT NO.</th>
+                </tr>
+                <% for(var i=0; i < prElemInstructionDetails.length; i++) { %>
+                    <tr>
+                        <%if (prElemInstructionDetails[i].rowCount > 0) { %>
+                            <td class="company-address text-coloring" align="center" rowspan="<%= prElemInstructionDetails[i].rowCount %>">
+                                <%= prElemInstructionDetails[i].elementName %>
+                            </td>
+                            <% } %>
+                                <td class="company-address text-coloring" colspan="2" cellpadding="1" cellspacing="1">
+                                    <%= prElemInstructionDetails[i].instructioName %>
+                                </td>
+                                <td class="company-address" cellpadding="1" cellspacing="1">
+                                    <%= prElemInstructionDetails[i].feedback %>
+                                </td>
+                    </tr>
+                    <% } %>
+    </table>
+    <p style="color:red">
+        <i>*This report is generated @ &nbsp;
+            <%= prDetails.location %>
+        </i>
+    </p>
+    <!-- <div id="googleMap" style="width:500px;height:380px;margin-top:10px;"></div> -->
+    <!-- <img src="http://maps.googleapis.com/maps/api/staticmap?size=800x600&maptype=hybrid&scale=2&format=png8&sensor=false&path=geodesic%3Atrue%7C-6.9325%2C+37.3916666666667%7C-6.9325%2C+37.3933333333333%7C-6.93388888888889%2C+37.3933333333333%7C-6.93388888888889%2C+37.3916666666667%7C-6.9325%2C+37.3916666666667&zoom=10" width="300" height="250"/> -->
+</body>
+<footer style="padding: 10px;">
+    <div>
+        <b>Regards</b>
+    </div>
+    <div>
+        <%= user %>
+    </div>
+</footer>
+
+</html>
