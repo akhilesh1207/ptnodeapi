@@ -6,8 +6,8 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var mail = require('./send-email');
 
-// var port = process.env.PORT || 3000;
-var port = 3000;
+var port = process.env.PORT || 3000;
+// var port = 3000;
 
 var app = express();
 app.set('port', port);
